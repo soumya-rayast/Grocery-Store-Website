@@ -97,7 +97,7 @@ html {
 
     .search-form {
         position: absolute;
-        top: -115%;
+        top: -170%;
         right: 2rem;
         width: 50rem;
         border-radius: .5rem;
@@ -135,17 +135,18 @@ html {
     .shopping-cart {
         position: absolute;
         top: 115%;
-        right: -105% ;
+        right: -105%;
         background: $white;
         border-radius: .5rem;
         box-shadow: $box-shadow;
         width: 35rem;
         padding: 2rem;
 
-        &.active{
+        &.active {
             right: 2rem;
             transition: .4s linear;
         }
+
         .box {
             display: flex;
             align-items: center;
@@ -153,7 +154,7 @@ html {
             margin-bottom: 1.5rem;
             position: relative;
 
-            .fa-times{
+            .fa-times {
                 position: absolute;
                 top: 50%;
                 transform: translateY(-50%);
@@ -204,9 +205,162 @@ html {
 
     }
 
+    .login-form {
+        position: absolute;
+        top: 115%;
+        right: -105%;
+        background: $white;
+        border-radius: .5rem;
+        box-shadow: $box-shadow;
+        width: 35rem;
+        padding: 2rem;
+
+        &.active {
+            right: 2rem;
+            transition: .4s linear;
+        }
+
+        h3 {
+            color: $black;
+            text-transform: uppercase;
+            font-style: 2.2rem;
+            text-align: center;
+            margin-bottom: .7rem;
+        }
+
+        .box {
+            margin: .7rem 0;
+            border: $border;
+            padding: 1rem 1.2rem;
+            font-size: 1.5rem;
+            color: $black;
+            text-transform: none;
+            width: 100%;
+        }
+
+        .remember {
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+            margin: .7rem 0;
+
+            label {
+                font-style: 1.5rem;
+                color: $light-color;
+                cursor: pointer;
+            }
+        }
+
+        .btn {
+            margin: 1rem 0;
+            width: 100%;
+            text-align: center;
+        }
+
+        p {
+            color: $light-color;
+            padding-top: .7rem;
+            font-size: 1.4rem;
+
+            a {
+                color: $green;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
 
 }
 
 #menu-btn {
     display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width :991px) {
+    html {
+        font-style: 55%;
+    }
+
+    .header {
+        padding: .2rem;
+    }
+}
+
+@media (max-width : 768px) {
+    #menu-btn {
+        display: inline-block;
+    }
+
+    .header {
+
+        .search-form {
+            width: 100%;
+            right: 0;
+            border-radius: 0;
+
+            &.avtive {
+                top: 99%;
+                border-top: $border;
+                border-bottom: $border;
+            }
+        }
+
+        .navbar {
+            position: absolute;
+            top: 105%;
+            left: 0;
+            right: 0;
+            background: $white;
+            border-top: $border;
+            border-bottom: $border;
+            clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+
+            &.active {
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+            }
+
+            a {
+                margin: 1.5rem;
+                padding: 1.5rem;
+                background: $light-bg;
+                font-size: 2rem;
+                display: block;
+
+                border-radius: .5rem;
+            }
+        }
+    }
+}
+
+
+@media (max-width : 450px) {
+    html {
+        font-style: 55%;
+    }
 }
