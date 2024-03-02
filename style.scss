@@ -284,6 +284,144 @@ section {
     display: none;
 }
 
+@keyframes fadeLeft {
+    100% {
+        transform: translateX(-5rem);
+        opacity: 0;
+
+    }
+}
+
+@keyframes fadeup {
+    0% {
+        transform: scale(.5);
+        opacity: 0;
+
+    }
+}
+
+// home section 
+.home {
+    padding-top: 14rem;
+    background: url(./Assests/bg-2.jpg);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+
+    .slides-container {
+        .slide {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            display: none;
+
+            &.active {
+                display: flex;
+            }
+
+            .content {
+                flex: 1 1 40rem;
+                animation: fadeLeft .4s linear .4s backwards;
+
+                span {
+                    color: $light-color;
+                    font-size: 2.5rem;
+                }
+
+                h3 {
+                    font-size: 6rem;
+                    color: $black;
+                    padding: .5rem 0;
+                }
+
+            }
+
+            .image {
+                flex: 1 1 40rem;
+                margin: 3rem 0;
+
+                img {
+                    width: 100%;
+                    animation: fadeup .4s linear;
+                }
+            }
+        }
+    }
+
+    #next,
+    #prev {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        height: 5rem;
+        width: 5rem;
+        line-height: 5rem;
+        box-shadow: $box-shadow;
+        text-align: center;
+        background: $white;
+        font-size: 3rem;
+        color: $black;
+        cursor: pointer;
+
+        &:hover {
+            color: $white;
+            background: $green;
+        }
+    }
+
+    #prev {
+        left: 2rem;
+    }
+
+    #next {
+        right: 2rem;
+    }
+
+}
+
+.banner-container {
+    @include grid(32rem);
+
+    .banner {
+        position: relative;
+        height: 25rem;
+        overflow: hidden;
+
+        &:hover img {
+            transform: scale(1.2);
+        }
+
+
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+        .content {
+            position: absolute;
+            top: 50%;
+            left: 2rem;
+            transform: translateY(-50%);
+
+            span{
+                color: $white;
+                font-size: 1.5rem;
+            }
+            h3{
+                font-size: 2rem;
+                padding-top: .5rem;
+                color: $black;
+            }
+            .btn{
+                padding: .8rem 2.5rem;
+            }
+        }
+    }
+}
+
+
+// footer 
+
 .footer {
     background: $light-bg;
 
@@ -306,7 +444,7 @@ section {
             a {
                 font-size: 1.4rem;
                 color: $light-color;
-                padding:1rem 0;
+                padding: 1rem 0;
                 display: block;
 
                 &:hover {
@@ -360,7 +498,7 @@ section {
 
 
 
-
+// media querries
 
 @media (max-width :991px) {
     html {
@@ -374,6 +512,18 @@ section {
     section {
         padding: 3rem 2rem;
     }
+
+    .home #next,
+    .home #prev {
+        transform: translateY(0);
+        top: 88%;
+    }
+
+    .home #prev {
+        left: auto;
+        right: 8rem;
+    }
+
 }
 
 @media (max-width : 768px) {
@@ -426,5 +576,9 @@ section {
 @media (max-width : 450px) {
     html {
         font-style: 55%;
+    }
+
+    .home .slides-container .slide .content h3 {
+        font-style: 5rem;
     }
 }
