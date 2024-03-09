@@ -396,6 +396,8 @@ section {
 }
 .category .box-container .box img {
   height: 15rem;
+  width: 15rem;
+  border-radius: 50%;
 }
 .category .box-container .box h3 {
   font-size: 2rem;
@@ -604,21 +606,22 @@ section {
   grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
   gap: 1.5rem;
 }
-.info-container info {
+.info-container .info {
   display: flex;
   align-items: center;
   gap: 1.5rem;
   padding: 2rem 0;
 }
-.info-container info img {
+.info-container .info img {
   height: 7rem;
+  border-radius: 50%;
 }
-.info-container info .content h3 {
+.info-container .info .content h3 {
   font-size: 2rem;
   color: #222;
   padding-bottom: 0.5rem;
 }
-.info-container info .content span {
+.info-container .info .content span {
   font-size: 1.5rem;
   color: #666;
 }

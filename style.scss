@@ -486,6 +486,8 @@ section {
 
         img {
             height: 15rem;
+            width: 15rem;
+            border-radius: 50%;
         }
 
         h3 {
@@ -725,17 +727,19 @@ section {
     }
 }
 
-.info-container {
+.info-container{
     @include grid(27rem);
 
-    info {
+    .info {
         display: flex;
         align-items: center;
         gap: 1.5rem;
         padding: 2rem 0;
 
-        img {
+        img{
             height: 7rem;
+            // width: 7rem;
+            border-radius: 50%;
         }
 
         .content {
